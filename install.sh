@@ -11,4 +11,4 @@ sudo make install
 cd ~/
 
 sudo pip install https://pypi.python.org/packages/3.4/s/setuptools/setuptools-11.3.1-py2.py3-none-any.whl
-sudo pip install -r ../requirements.txt
+sudo pip install -r requirements.txt
