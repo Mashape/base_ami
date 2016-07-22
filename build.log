@@ -1,10 +1,89 @@
-1469199561,,ui,say,amazon-ebs output will be in this color.
-1469199561,,ui,say,
-1469199561,,ui,say,==> amazon-ebs: Prevalidating AMI Name...
-1469199573,,ui,error,==> amazon-ebs: Error querying AMI: NoCredentialProviders: no valid providers in chain
-1469199573,,ui,error,Build 'amazon-ebs' errored: Error querying AMI: NoCredentialProviders: no valid providers in chain
-1469199573,,error-count,1
-1469199573,,ui,error,\n==> Some builds didn't complete successfully and had errors:
-1469199573,amazon-ebs,error,Error querying AMI: NoCredentialProviders: no valid providers in chain
-1469199573,,ui,error,--> amazon-ebs: Error querying AMI: NoCredentialProviders: no valid providers in chain
-1469199573,,ui,say,\n==> Builds finished but no artifacts were created.
+1469199596,,ui,say,amazon-ebs output will be in this color.
+1469199596,,ui,say,
+1469199597,,ui,say,==> amazon-ebs: Prevalidating AMI Name...
+1469199598,,ui,say,==> amazon-ebs: Inspecting the source AMI...
+1469199598,,ui,say,==> amazon-ebs: Creating temporary keypair: packer 579234ec-f3b6-57ea-2da1-affd1985b28e
+1469199598,,ui,say,==> amazon-ebs: Launching a source AWS instance...
+1469199599,,ui,message,    amazon-ebs: Instance ID: i-a8cef92e
+1469199599,,ui,say,==> amazon-ebs: Waiting for instance (i-a8cef92e) to become ready...
+1469199616,,ui,say,==> amazon-ebs: Waiting for SSH to become available...
+1469199645,,ui,say,==> amazon-ebs: Connected to SSH!
+1469199645,,ui,say,==> amazon-ebs: Provisioning with shell script: /home/vagrant/mashape/base_ami/install.sh
+1469199646,,ui,message,    amazon-ebs: + sudo apt-get clean
+1469199646,,ui,message,    amazon-ebs: + sudo apt-get update
+1469199646,,ui,message,    amazon-ebs: Ign http://archive.ubuntu.com trusty InRelease
+1469199646,,ui,message,    amazon-ebs: Get:1 http://security.ubuntu.com trusty-security InRelease [65.9 kB]
+1469199646,,ui,message,    amazon-ebs: Get:2 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+1469199647,,ui,message,    amazon-ebs: Get:3 http://security.ubuntu.com trusty-security/main amd64 Packages [511 kB]
+1469199647,,ui,message,    amazon-ebs: Get:4 http://archive.ubuntu.com trusty Release.gpg [933 B]
+1469199647,,ui,message,    amazon-ebs: Get:5 http://archive.ubuntu.com trusty-updates/main amd64 Packages [799 kB]
+1469199647,,ui,message,    amazon-ebs: Get:6 http://security.ubuntu.com trusty-security/restricted amd64 Packages [13.0 kB]
+1469199647,,ui,message,    amazon-ebs: Get:7 http://security.ubuntu.com trusty-security/universe amd64 Packages [130 kB]
+1469199647,,ui,message,    amazon-ebs: Get:8 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4%!(PACKER_COMMA)990 B]
+1469199647,,ui,message,    amazon-ebs: Get:9 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [15.9 kB]
+1469199647,,ui,message,    amazon-ebs: Get:10 http://security.ubuntu.com trusty-security/main Translation-en [282 kB]
+1469199647,,ui,message,    amazon-ebs: Get:11 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [363 kB]
+1469199647,,ui,message,    amazon-ebs: Get:12 http://security.ubuntu.com trusty-security/multiverse Translation-en [2%!(PACKER_COMMA)570 B]
+1469199647,,ui,message,    amazon-ebs: Get:13 http://security.ubuntu.com trusty-security/restricted Translation-en [3%!(PACKER_COMMA)206 B]
+1469199647,,ui,message,    amazon-ebs: Get:14 http://security.ubuntu.com trusty-security/universe Translation-en [77.2 kB]
+1469199647,,ui,message,    amazon-ebs: Get:15 http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages [13.2 kB]
+1469199647,,ui,message,    amazon-ebs: Get:16 http://archive.ubuntu.com trusty-updates/main Translation-en [401 kB]
+1469199648,,ui,message,    amazon-ebs: Get:17 http://archive.ubuntu.com trusty-updates/multiverse Translation-en [7%!(PACKER_COMMA)227 B]
+1469199648,,ui,message,    amazon-ebs: Get:18 http://archive.ubuntu.com trusty-updates/restricted Translation-en [3%!(PACKER_COMMA)699 B]
+1469199648,,ui,message,    amazon-ebs: Get:19 http://archive.ubuntu.com trusty-updates/universe Translation-en [191 kB]
+1469199648,,ui,message,    amazon-ebs: Get:20 http://archive.ubuntu.com trusty Release [58.5 kB]
+1469199648,,ui,message,    amazon-ebs: Get:21 http://archive.ubuntu.com trusty/main amd64 Packages [1%!(PACKER_COMMA)350 kB]
+1469199648,,ui,message,    amazon-ebs: Get:22 http://archive.ubuntu.com trusty/restricted amd64 Packages [13.0 kB]
+1469199648,,ui,message,    amazon-ebs: Get:23 http://archive.ubuntu.com trusty/universe amd64 Packages [5%!(PACKER_COMMA)859 kB]
+1469199649,,ui,message,    amazon-ebs: Get:24 http://archive.ubuntu.com trusty/multiverse amd64 Packages [132 kB]
+1469199649,,ui,message,    amazon-ebs: Get:25 http://archive.ubuntu.com trusty/main Translation-en [762 kB]
+1469199650,,ui,message,    amazon-ebs: Get:26 http://archive.ubuntu.com trusty/multiverse Translation-en [102 kB]
+1469199650,,ui,message,    amazon-ebs: Get:27 http://archive.ubuntu.com trusty/restricted Translation-en [3%!(PACKER_COMMA)457 B]
+1469199650,,ui,message,    amazon-ebs: Get:28 http://archive.ubuntu.com trusty/universe Translation-en [4%!(PACKER_COMMA)089 kB]
+1469199652,,ui,message,    amazon-ebs: Ign http://archive.ubuntu.com trusty/main Translation-en_US
+1469199652,,ui,message,    amazon-ebs: Ign http://archive.ubuntu.com trusty/multiverse Translation-en_US
+1469199652,,ui,message,    amazon-ebs: Ign http://archive.ubuntu.com trusty/restricted Translation-en_US
+1469199652,,ui,message,    amazon-ebs: Ign http://archive.ubuntu.com trusty/universe Translation-en_US
+1469199652,,ui,message,    amazon-ebs: Fetched 15.3 MB in 6s (2%!(PACKER_COMMA)335 kB/s)
+1469199655,,ui,message,    amazon-ebs: Reading package lists... Done
+1469199655,,ui,message,    amazon-ebs: + sudo apt-get install -yf python-virtualenv python-distutils-extra python-apt make git build-essential libssl-dev libffi-dev python-dev libcurl4-openssl-dev
+1469199655,,ui,message,    amazon-ebs: Reading package lists... Done
+1469199655,,ui,message,    amazon-ebs: Building dependency tree
+1469199655,,ui,message,    amazon-ebs: Reading state information... Done
+1469199655,,ui,message,    amazon-ebs: Package make is not available%!(PACKER_COMMA) but is referred to by another package.
+1469199655,,ui,message,    amazon-ebs: This may mean that the package is missing%!(PACKER_COMMA) has been obsoleted%!(PACKER_COMMA) or
+1469199655,,ui,message,    amazon-ebs: is only available from another source
+1469199655,,ui,message,    amazon-ebs:
+1469199655,,ui,message,    amazon-ebs: Package build-essential is not available%!(PACKER_COMMA) but is referred to by another package.
+1469199655,,ui,message,    amazon-ebs: This may mean that the package is missing%!(PACKER_COMMA) has been obsoleted%!(PACKER_COMMA) or
+1469199656,,ui,message,    amazon-ebs: is only available from another source
+1469199656,,ui,message,    amazon-ebs:
+1469199656,,ui,message,    amazon-ebs: Package libffi-dev is not available%!(PACKER_COMMA) but is referred to by another package.
+1469199656,,ui,message,    amazon-ebs: This may mean that the package is missing%!(PACKER_COMMA) has been obsoleted%!(PACKER_COMMA) or
+1469199656,,ui,message,    amazon-ebs: is only available from another source
+1469199656,,ui,message,    amazon-ebs:
+1469199656,,ui,message,    amazon-ebs: Package python-virtualenv is not available%!(PACKER_COMMA) but is referred to by another package.
+1469199656,,ui,message,    amazon-ebs: This may mean that the package is missing%!(PACKER_COMMA) has been obsoleted%!(PACKER_COMMA) or
+1469199656,,ui,message,    amazon-ebs: is only available from another source
+1469199656,,ui,message,    amazon-ebs:
+1469199656,,ui,message,    amazon-ebs: Package python-dev is not available%!(PACKER_COMMA) but is referred to by another package.
+1469199656,,ui,message,    amazon-ebs: This may mean that the package is missing%!(PACKER_COMMA) has been obsoleted%!(PACKER_COMMA) or
+1469199656,,ui,message,    amazon-ebs: is only available from another source
+1469199656,,ui,message,    amazon-ebs: However the following packages replace it:
+1469199656,,ui,message,    amazon-ebs: python
+1469199656,,ui,message,    amazon-ebs:
+1469199656,,ui,message,    amazon-ebs: E: Package 'python-virtualenv' has no installation candidate
+1469199656,,ui,message,    amazon-ebs: E: Unable to locate package python-distutils-extra
+1469199656,,ui,message,    amazon-ebs: E: Package 'make' has no installation candidate
+1469199656,,ui,message,    amazon-ebs: E: Package 'build-essential' has no installation candidate
+1469199656,,ui,message,    amazon-ebs: E: Package 'libffi-dev' has no installation candidate
+1469199656,,ui,message,    amazon-ebs: E: Package 'python-dev' has no installation candidate
+1469199656,,ui,say,==> amazon-ebs: Terminating the source AWS instance...
+1469199692,,ui,say,==> amazon-ebs: No AMIs to cleanup
+1469199692,,ui,say,==> amazon-ebs: Deleting temporary keypair...
+1469199692,,ui,error,Build 'amazon-ebs' errored: Script exited with non-zero exit status: 100
+1469199692,,error-count,1
+1469199692,,ui,error,\n==> Some builds didn't complete successfully and had errors:
+1469199692,amazon-ebs,error,Script exited with non-zero exit status: 100
+1469199692,,ui,error,--> amazon-ebs: Script exited with non-zero exit status: 100
+1469199692,,ui,say,\n==> Builds finished but no artifacts were created.
