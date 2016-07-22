@@ -1,0 +1,3 @@
+1469199469,,ui,say,amazon-ebs output will be in this color.
+1469199469,,ui,say,
+1469199469,,ui,error,1 error(s) occurred:\n\n* Bad script '/home/vagrant/mashape/base_ami/..//install.sh': stat /home/vagrant/mashape/base_ami/..//install.sh: no such file or directory

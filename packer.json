@@ -1,0 +1,47 @@
+{
+	"variables": {
+		"version": "{{env `VERSION`}}",
+		"home": "{{env `home`}}"
+	},
+	"builders": [{
+		"security_group_id": "sg-2706da5c",
+		"type": "amazon-ebs",
+		"ssh_pty": "true",
+		"communicator": "ssh",
+		"region": "us-east-1",
+		"source_ami": "ami-fce3c696",
+		"instance_type": "t2.medium",
+		"ssh_username": "ubuntu",
+		"ssh_timeout": "10m",
+		"ami_name": "mashape-ansible-v{{user `version`}}",
+		"subnet_id": "subnet-22037a54",
+		"vpc_id": "vpc-33c3de57",
+		"tags": {
+			"Name": "mashape-ansible-v{{user `version`}}",
+			"Author": "ansible",
+			"Environment": "packer",
+			"Version": "{{user `version`}}"
+		},
+		"ami_description": "Mashape ansible base AMI ({{user `version`}}) AMI created {{timestamp}}",
+		"associate_public_ip_address": true,
+		"ami_block_device_mappings": [{
+			"device_name": "/dev/xvda",
+			"volume_size": 100,
+			"volume_type": "gp2",
+			"delete_on_termination": true
+		}],
+		"launch_block_device_mappings": [{
+			"device_name": "/dev/sda1",
+			"volume_size": 100,
+			"volume_type": "gp2",
+			"delete_on_termination": true
+		}]
+	}],
+	"provisioners": [{
+		"type": "shell",
+		"script": "{{ user `home`}}/install.sh",
+		"environment_vars": [
+			"new_galileo_api_version={{user `new_galileo_api_version`}}"
+		]
+	}]
+}
