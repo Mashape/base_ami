@@ -10,4 +10,7 @@ sudo pip install -r /home/ubuntu/requirements.txt
 
 git clone https://github.com/fsaintjacques/semver-tool.git
 cd semver-tool
+chmod 500 /home/ubuntu/.ssh/id_rsa
+ssh-add /home/ubuntu/.ssh/id_rsa
 sudo make install
+rm /home/ubuntu/.ssh/id_rsa
