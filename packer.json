@@ -44,11 +44,6 @@
       "destination": "/home/ubuntu/requirements.txt"
     },
     {
-      "type": "file",
-      "source": "{{ user `home`}}/id_rsa",
-      "destination": "/home/ubuntu/.ssh/id_rsa"
-    },
-    {
       "type": "shell",
       "script": "{{ user `home`}}/install.sh"
     }
