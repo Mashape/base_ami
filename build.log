@@ -1,3 +1,10 @@
-1469199469,,ui,say,amazon-ebs output will be in this color.
-1469199469,,ui,say,
-1469199469,,ui,error,1 error(s) occurred:\n\n* Bad script '/home/vagrant/mashape/base_ami/..//install.sh': stat /home/vagrant/mashape/base_ami/..//install.sh: no such file or directory
+1469199561,,ui,say,amazon-ebs output will be in this color.
+1469199561,,ui,say,
+1469199561,,ui,say,==> amazon-ebs: Prevalidating AMI Name...
+1469199573,,ui,error,==> amazon-ebs: Error querying AMI: NoCredentialProviders: no valid providers in chain
+1469199573,,ui,error,Build 'amazon-ebs' errored: Error querying AMI: NoCredentialProviders: no valid providers in chain
+1469199573,,error-count,1
+1469199573,,ui,error,\n==> Some builds didn't complete successfully and had errors:
+1469199573,amazon-ebs,error,Error querying AMI: NoCredentialProviders: no valid providers in chain
+1469199573,,ui,error,--> amazon-ebs: Error querying AMI: NoCredentialProviders: no valid providers in chain
+1469199573,,ui,say,\n==> Builds finished but no artifacts were created.
