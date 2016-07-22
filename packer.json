@@ -1,6 +1,5 @@
 {
   "variables": {
-    "version": "{{env `VERSION`}}",
     "home": "{{env `home`}}"
   },
   "builders": [{
@@ -13,16 +12,15 @@
     "instance_type": "t2.medium",
     "ssh_username": "ubuntu",
     "ssh_timeout": "10m",
-    "ami_name": "mashape-ansible-v{{user `version`}}",
+    "ami_name": "mashape-ansible",
     "subnet_id": "subnet-22037a54",
     "vpc_id": "vpc-33c3de57",
     "tags": {
-      "Name": "mashape-ansible-v{{user `version`}}",
+      "Name": "mashape-ansible",
       "Author": "ansible",
       "Environment": "packer",
-      "Version": "{{user `version`}}"
     },
-    "ami_description": "Mashape ansible base AMI ({{user `version`}}) AMI created {{timestamp}}",
+    "ami_description": "Mashape ansible base AMI created {{timestamp}",
     "associate_public_ip_address": true,
     "ami_block_device_mappings": [{
       "device_name": "/dev/xvda",
