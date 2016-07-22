@@ -6,8 +6,18 @@ services:
 
 install:
   - openssl aes-256-cbc -K $encrypted_9ca81b5594f5_key -iv $encrypted_9ca81b5594f5_iv -in id_rsa.enc -out id_rsa -d
+  - eval `ssh-agent -s`
+  - chmod 500 id_rsa
+  - ssh-add id_rsa
+  - git config --global user.name "Travis CI"
+  - git config --global user.email office@mashape.com
+  - git config --global push.default matching
   - docker pull mashape/semver
   - docker pull mashape/packerbuilder
 
 script:
   - make create_ami
+  - docker run -v $TRAVIS_BUILD_DIR:/src mashape/semver semver bump patch && \
+  - git add . && \
+  - git commit -am "created new AMI" && \
+  - git push

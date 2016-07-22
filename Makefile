@@ -19,10 +19,3 @@ create_ami:
 		-e "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}" \
 		-e "VERSION=${VERSION}" \
 		mashape/packerbuilder packer -machine-readable build $(WD)/packer.json | tee build.log && \
-	docker run -v $(WD):/src mashape/semver semver bump patch && \
-	eval `ssh-agent -s` && \
-  chmod 500 ~/.ssh/id_rsa && \
-  ssh-add ~/.ssh/id_rsa && \
-	git add . && \
-	git commit -am "created AMI ${VERSION}" && \
-	git push
