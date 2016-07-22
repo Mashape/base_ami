@@ -8,6 +8,6 @@ create_ami:
   #ssh-add ~/.ssh/id_rsa && \
 	git add . && \
 	git commit -am "created new AMI"
-	echo $version
+	echo $$version
 	git tag -a $version -m "created new AMI"
 	git push origin master --tags
