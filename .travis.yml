@@ -16,8 +16,8 @@ install:
   - docker pull mashape/packerbuilder
 
 script:
-  - make create_ami
-  - docker run -v $TRAVIS_BUILD_DIR:/src mashape/semver semver bump patch && \
+  - make create_ami && \
+  - docker run -v ${TRAVIS_BUILD_DIR}:/src mashape/semver semver bump patch && \
   - git add . && \
   - git commit -am "created new AMI" && \
-  - git push
+  - git push && \
