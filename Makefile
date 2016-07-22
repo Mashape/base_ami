@@ -9,7 +9,7 @@ create_ami:
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		mashape/packerbuilder packer validate $(WD)/packer.json
 	$(eval VERSION=`docker run -v $(WD):/src mashape/semver semver bump patch --pretend`)
-	docker run -i --rm \
+	@docker run -i --rm \
 		-v $(WD):$(WD) \
 		-v /tmp:/tmp \
 		-v /var/run/docker.sock:/var/run/docker.sock \
