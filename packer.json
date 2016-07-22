@@ -18,7 +18,7 @@
     "tags": {
       "Name": "mashape-ansible",
       "Author": "ansible",
-      "Environment": "packer",
+      "Environment": "packer"
     },
     "ami_description": "Mashape ansible base AMI created {{timestamp}",
     "associate_public_ip_address": true,
