@@ -37,11 +37,18 @@
 			"delete_on_termination": true
 		}]
 	}],
-	"provisioners": [{
-		"type": "shell",
-		"script": "{{ user `home`}}/install.sh",
-		"environment_vars": [
-			"new_galileo_api_version={{user `new_galileo_api_version`}}"
-		]
-	}]
+	"provisioners": [
+    {
+      "type": "file",
+      "source": "{{ user `home`}}/requirements.txt",
+      "destination": "/home/ubuntu/requirements.txt"
+    },
+    {
+  		"type": "shell",
+  		"script": "{{ user `home`}}/install.sh",
+  		"environment_vars": [
+  			"new_galileo_api_version={{user `new_galileo_api_version`}}"
+  		]
+  	}
+  ]
 }
