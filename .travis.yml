@@ -5,7 +5,6 @@ services:
   - docker
 
 install:
-  - openssl aes-256-cbc -K $encrypted_9ca81b5594f5_key -iv $encrypted_9ca81b5594f5_iv -in id_rsa.enc -out id_rsa -d
   - docker pull mashape/packerbuilder
 
 script:
