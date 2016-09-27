@@ -12,11 +12,11 @@
     "instance_type": "t2.medium",
     "ssh_username": "ubuntu",
     "ssh_timeout": "10m",
-    "ami_name": "mashape-ansible",
+    "ami_name": "mashape-ansible-v2",
     "subnet_id": "subnet-22037a54",
     "vpc_id": "vpc-33c3de57",
     "tags": {
-      "Name": "mashape-ansible",
+      "Name": "mashape-ansible-v2",
       "Author": "ansible",
       "Environment": "packer"
     },
